@@ -9,3 +9,4 @@ netbeans
 nbproject
 .vagrant
 /app/composer.lock
+*.log
