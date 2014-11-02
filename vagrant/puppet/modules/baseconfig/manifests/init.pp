@@ -8,7 +8,10 @@ class baseconfig {
   }
   
   exec { 'apt-get upgrade':
-    command => '/usr/bin/apt-get upgrade -y';
+    command => '/usr/bin/apt-get upgrade -y --fix-missing';
+  }
+  -> exec { 'apt-get install vim':
+    command => '/usr/bin/apt-get install -y vim';
   }
 
   #host { 'hostmachine':

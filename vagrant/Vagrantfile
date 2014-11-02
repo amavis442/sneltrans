@@ -83,6 +83,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         #
     end
 
+    config.vm.provision :shell, :path => "puppet_prep.sh"
+
     config.vm.define "linux" do |linux|
         linux.vm.box = "fgrehm/trusty64-lxc"
         #linux.vm.box_url ="https://dl.dropboxusercontent.com/u/67225617/lxc-vagrant/lxc-squeeze64-puppet3-2013-07-27.box"
