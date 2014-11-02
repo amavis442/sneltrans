@@ -19,4 +19,8 @@ File {
   mode  => '0644',
 }
 
+package { 'apache2':
+    ensure => purged,
+}
+
 include baseconfig,nginx, php, mysql, curl, composer
