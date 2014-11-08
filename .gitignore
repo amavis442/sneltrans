@@ -10,3 +10,5 @@ nbproject
 .vagrant
 /app/composer.lock
 *.log
+/app/web/media/upload/
+!/app/web/media/upload/.gitkeep
