@@ -16,7 +16,7 @@ $config = [
         ],
         'user' => [
             'identityClass' => 'app\models\User',
-            'enableAutoLogin' => true,
+            'enableAutoLogin' => false,
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -38,6 +38,12 @@ $config = [
             ],
         ],
         'db' => require(__DIR__ . '/db.php'),
+        'view' => [
+            'theme' => [
+                'pathMap' => ['@app/views' => '@app/themes/sneltrans/views'],
+                'baseUrl' => '@web/themes/sneltrans',
+            ],
+        ],
     ],
     'params' => $params,
 ];

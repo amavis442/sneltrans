@@ -21,12 +21,11 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-
 <?php $this->beginBody() ?>
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'Sneltrans',
+                'brandLabel' => 'My Company',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -52,6 +51,11 @@ AppAsset::register($this);
             <?= Breadcrumbs::widget([
                 'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
             ]) ?>
+        </div>
+<div class="container-fluid">
+    Hier komt de banner
+</div>
+        <div class="container">
             <?= $content ?>
         </div>
     </div>
