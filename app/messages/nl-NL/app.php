@@ -7,5 +7,6 @@
  */
 
 return [
-    'Read more' =>'Lees meer'
+    'Read more' =>'Lees meer',
+    'Users' =>'Gebruikers'
 ];
