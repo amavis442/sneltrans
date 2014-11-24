@@ -24,8 +24,13 @@ class php {
     require => Exec['apt-get update'],
   }
 
+
+  package{ ['mcrypt']:
+    ensure => present
+ }
+
   service { 'php5-fpm':
     ensure => running,
-    require => Package['php5-fpm'],
+    require => Package['php5-fpm','mcrypt'],
   }
 }
