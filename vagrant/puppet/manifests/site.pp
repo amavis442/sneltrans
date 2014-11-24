@@ -3,14 +3,15 @@ stage { 'pre':
   before => Stage['main']
 }
 
+Exec {
+    path => ["/bin", "/sbin", "/usr/bin", "/usr/sbin","/usr/local/bin","/usr/local/sbin"],
+}
+
 # add the baseconfig module to the new 'pre' run stage
 class { 'baseconfig':
   stage => 'pre'
 }
 
-file { '/var/www/':
-    ensure => 'directory',
-}
 
 # set defaults for file ownership/permissions
 File {
@@ -19,8 +20,8 @@ File {
   mode  => '0644',
 }
 
-package { 'apache2':
+package { 'apache':
     ensure => purged,
 }
 
-include baseconfig,nginx, php, mysql, curl, composer
+include baseconfig, nginx, php, mysql, curl, composer

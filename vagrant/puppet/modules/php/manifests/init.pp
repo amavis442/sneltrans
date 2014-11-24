@@ -4,7 +4,7 @@
 # Installs PHP5 and necessary modules. Sets config files.
 #
 class php {
-  package { ['php5-fpm',
+  package { [ 'php5-fpm',
              'php5-cli',
              'php-apc',
              'php5-curl',
@@ -30,7 +30,7 @@ class php {
  }
 
   service { 'php5-fpm':
-    ensure => running,
+   ensure => running,
     require => Package['php5-fpm','mcrypt'],
   }
 }

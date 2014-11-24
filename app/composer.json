@@ -12,7 +12,8 @@
         "irc": "irc://irc.freenode.net/yii",
         "source": "https://github.com/yiisoft/yii2"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "*",
@@ -20,7 +21,8 @@
         "yiisoft/yii2-swiftmailer": "*",
         "yiisoft/yii2-jui":"*",
         "kartik-v/yii2-widgets": "dev-master",
-        "kartik-v/yii2-datecontrol": "@stable"
+        "kartik-v/yii2-datecontrol": "@stable",
+        "amnah/yii2-user": "dev-master"
         
     },
     "require-dev": {
