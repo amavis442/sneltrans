@@ -1,16 +1,17 @@
 <?php
-use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-$this->title = 'About';
-$this->params['breadcrumbs'][] = $this->title;
+/* 
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 ?>
-<div class="site-about">
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        This is the About page. You may modify the following file to customize its content:
-    </p>
-
-    <code><?= __FILE__ ?></code>
+<div class='container'>
+    <div class=''>
+        sneltrans koeriers is uniek met haar kosten bepalingen. Wij rekenen 0,35e per kilometer vanaf uw filliaal gerekend en 2,50e voorrijkosten. 
+        En is daarmee de goedkoopste in de regio. Snel service hievan geen uitzondering. Wilt u een pakketje dezelfde dag nog bezorgt hebben bij een 
+        klant or zakelijke contact, 
+        lever dan de documentatie aan de koerier en deze brengt rechtstreeks aan de geadresseerde al-dan-niet met handtekening bevestigd.
+    </div>
+    
 </div>

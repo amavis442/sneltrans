@@ -6,6 +6,7 @@ $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'language' => 'nl',
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -55,6 +56,7 @@ if (YII_ENV_DEV) {
     $config['modules']['debug']['allowedIPs'] = ['192.168.33.1','10.0.3.*', '127.0.0.1', '::1'];
 
     $config['bootstrap'][] = 'gii';
-    $config['modules']['gii'] = 'yii\gii\Module';
+    $config['modules']['gii']['class'] = 'yii\gii\Module';
+    $config['modules']['gii']['allowedIPs'] = ['192.168.33.1','10.0.3.*', '127.0.0.1', '::1'];
 }
 return $config;
