@@ -16,6 +16,13 @@ $config = [
         'cache' => [
             'class' => 'yii\caching\FileCache',
         ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'rules' => [
+                'page/<id:\d+>' => 'page/default/view',
+                'article/<id:\d+>' => 'article/Article/view',
+            ]
+        ],
         'user' => [
             'class' => 'amnah\yii2\user\components\User',
             //'identityClass' => 'app\models\User',
@@ -57,6 +64,12 @@ $config = [
             'class' => 'amnah\yii2\user\Module',
             // set custom module properties here ...
         ],
+        'article' => [
+            'class' => 'app\modules\content\article\article',
+        ],
+        'page' => [
+            'class' => 'app\modules\content\page\page',
+        ],        
     ],
     'params' => $params,
 ];

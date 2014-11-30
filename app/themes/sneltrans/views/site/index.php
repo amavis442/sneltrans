@@ -3,53 +3,33 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 $this->title = 'Sneltrans';
 ?>
 <div class="site-index">
-
-
-
     <div class="body-content">
 
         <div class="row">
+            <?php
+            if (is_array($articles)):
+                foreach ($articles as $article):
+            ?>
             <div class="col-lg-4">
 
                 <img alt="" src="<?= Yii::getAlias('@web'); ?>/images/transportation-wordpress-theme-320x107.jpg">
 
+                <h2><?=$article->title;?></h2>
 
-                <h2>Heading</h2>
+                <p><?=$article->teaser;?></p>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/"><?=Yii::t('app','Read more');?> &raquo;</a></p>
+                <p><a class="btn btn-default" href="<?=Url::to(['article/view','id'=>$article->id]);?>"><?=Yii::t('app','Read more');?> &raquo;</a></p>
             </div>
-            <div class="col-lg-4">
-                <img alt="" src="images/packing-moving-theme-320x107.jpg">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/"><?=Yii::t('app','Read more');?> &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <img alt="" src="images/wordpress-moving-company-theme-320x107.jpg">
-                <h2>Heading</h2>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/"><?=Yii::t('app','Read more');?> &raquo;</a></p>
-            </div>
+            <?php
+                endforeach;
+            endif;
+            ?>
         </div>
 
     </div>

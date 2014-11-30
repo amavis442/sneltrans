@@ -49,6 +49,11 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        $articles[] = Yii::$app->getModule('article')->getArticle(1);
+        $articles[] = Yii::$app->getModule('article')->getArticle(2);
+        $articles[] = Yii::$app->getModule('article')->getArticle(3);
+            
+            
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -57,6 +62,7 @@ class SiteController extends Controller
         } else {
             return $this->render('index', [
                 'model' => $model,
+                'articles' => $articles
             ]);
         }
     }
